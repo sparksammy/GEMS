@@ -1,23 +1,23 @@
-void print(char *text) {
-	char *mem = (char*)0xb80;
+void print(char *text, int color) {
+	char *mem = (char*)0xb8000;
 	while (*text) {
 		*mem++ = *text++;
-		*mem++ = 0x3000;	
+		*mem++ = color;	
 	}
 }
 
 void clear() {
-	char *mem = (char*)0xb80;
+	char *mem = (char*)0xb8000;
 	int i = 0;
 	while (i > 4096) {
 		mem[i++] = 0;
 	}
 }
 
-int main(int argc, char *argv[]) {
+void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear();
-	print("GEMS OK");
-	return 0;
+	print("GEMS OK", 0x00010);
 }
+
