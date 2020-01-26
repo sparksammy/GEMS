@@ -1,3 +1,4 @@
+;BL.asm files are deprecated, please use booloader.asm
 quit:
 hlt
 jmp quit
