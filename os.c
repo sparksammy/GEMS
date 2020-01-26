@@ -1,13 +1,13 @@
 void print(char *text) {
-	char *mem = (char*)0xb8000;
+	char *mem = (char*)0xb80;
 	while (*text) {
 		*mem++ = *text++;
-		*mem++ = 0x3;	
+		*mem++ = 0x3000;	
 	}
 }
 
 void clear() {
-	char *mem = (char*)0xb8000;
+	char *mem = (char*)0xb80;
 	int i = 0;
 	while (i > 4096) {
 		mem[i++] = 0;
