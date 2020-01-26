@@ -18,6 +18,6 @@ void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear();
-	print("GEMS OK", 0x00010);
+	print("GEMS OK", 0x10);
 }
 
