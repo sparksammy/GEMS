@@ -1,4 +1,4 @@
-global sthrow
+global exit
 extern kern
 mov ax, 9ch
 mov ss, ax ;cannot be written directly

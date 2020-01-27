@@ -1,23 +1,13 @@
-void print(char *text, int color) {
-	char *mem = (char*)0xb8000;
-	while (*text) {
-		*mem++ = *text++;
-		*mem++ = color;	
-	}
-}
-
-void clear() {
-	char *mem = (char*)0xb8000;
-	int i = 0;
-	while (i > 4096) {
-		mem[i++] = 0;
-	}
-}
-
+#include "standard_io.h"
+//#include "crashhand.h" //Comming Soon(TM)
+#include "sticky.h"
+//#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
 void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear();
 	print("GEMS OK", 0x10);
+	stick(); //stick when we need it, so we can stick
+	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
 }
-
+//and we all *shut* down...
