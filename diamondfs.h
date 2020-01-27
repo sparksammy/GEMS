@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void open(char file) {
 	fp = fopen("file.txt", "w+");
 }

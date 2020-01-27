@@ -1,13 +1,19 @@
+#include <time.h>
 int brk = 0;
 void unstick() {
 	brk = 0;
 }
 
-void stickfunc() {
-	//this will stick
+void delay(unsigned int s) {
+	time_t g = s + time(NULL);
+	while (g > time(NULL)); {
+		//do nothing
+	}
 }
+
 void stick() {
-	while (brk < 1) {
-		stickfunc();
+	brk = 1;
+	while (brk < 0) {
+		delay(2500);
 	}
 }

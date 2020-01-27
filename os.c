@@ -1,4 +1,7 @@
-#include "standard_io.h"
+#include <stdio.h> //needed for delay and DiamondFS
+#include <stdlib.h> //needed for delay
+#include <time.h> //Time since Jan. 1st 1970
+#include "standard_io.h" //I think this might have an issue. Not sure.
 //#include "crashhand.h" //Comming Soon(TM)
 #include "sticky.h"
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
