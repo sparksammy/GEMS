@@ -1,12 +1,12 @@
-#include <time.h>
 int brk = 0;
+int ghzepoch = 0; //nanoseconds
 void unstick() {
 	brk = 0;
 }
 
 void delay(unsigned int s) {
-	time_t g = s + time(NULL);
-	while (g > time(NULL)); {
+	int g = s + ghzepoch;
+	while (g > ghzepoch); {
 		//do nothing
 	}
 }
@@ -14,6 +14,6 @@ void delay(unsigned int s) {
 void stick() {
 	brk = 1;
 	while (brk < 0) {
-		delay(2500);
+		//do nothing
 	}
 }
