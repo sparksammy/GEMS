@@ -14,3 +14,7 @@ void wait(int microseconds) {
 		//do nothing
 	}
 }
+
+void getTime() {
+	return time;
+}
