@@ -15,6 +15,6 @@ void wait(int microseconds) {
 	}
 }
 
-void getTime() {
+int getTime() {
 	return time;
 }
