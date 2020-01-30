@@ -10,3 +10,16 @@ int evenorodd(int n){
   }
   return 0;
 }
+
+// Example: "What is 10% out of 150?"
+float findpercentageofnum(float per, float num){
+  return per / 100 * num;
+}
+
+long int factorial(int n){
+  if (n == 0){
+    return 1;
+  } else{
+    return n * fac(n-1);
+  }
+}
