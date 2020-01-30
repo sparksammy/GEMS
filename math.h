@@ -10,3 +10,8 @@ int evenorodd(int n){
   }
   return 0;
 }
+
+// Example: "What is 10% out of 150?"
+float fpn(float per, float num){
+  return per / 100 * num;
+}
