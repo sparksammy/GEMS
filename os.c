@@ -48,7 +48,7 @@ void kern() {
         print("Starting OS...", 0x10);
 	os();
 	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
-	while (true) {
+	while (1 == 1) {
 		halt();
 	}
 }
