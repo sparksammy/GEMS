@@ -3,6 +3,9 @@
 #include <stdlib.h> //needed for delay
 #include "time.h" //Microsecond time.
 #include "standard_io.h" //I think this might have an issue. Not sure.
+#include <lua.h> //main lua
+#include <lauxlib.h> //another lua
+#include <lualib.h>  //yet another lua
 //#include "crashhand.h" //Comming Soon(TM)
 //#include "sticky.h" //module deprecated. use new stick function and new function called delay.
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
@@ -23,6 +26,14 @@ void unstick() {
 	sticker = 0;
 }
 
+void halt();
+
+void os() {
+        lua_State *L = luaL_newstate();
+        luaL_openlibs(L);
+        luaL_dofile(L, "os.lua");
+}
+
 void kern() {
 	//extern bootloader();
 	//bootloader();
@@ -31,8 +42,11 @@ void kern() {
 	wait(10000000);
 	print("TIME OK. STARTING TIME SERVICE...", 0x10);
 	count();
-	stick(); //stick when we need it, so we can stick
+        print("Starting OS...", 0x10);
+	os();
 	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
 }
-
+void main() {
+	kern();
+}
 //and we all *shut* down...
