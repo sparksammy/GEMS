@@ -27,7 +27,9 @@ void unstick() {
 	sticker = 0;
 }
 
-void halt();
+void halt() {
+	//do nothing... :)
+}
 
 void os() {
         lua_State *L = luaL_newstate();
