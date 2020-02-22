@@ -3,23 +3,54 @@ function wait(s)
   repeat until os.time() > ntime
 end
 
--- Tagon is a programming language for GEMS
--- Since lua running lua doesn't work.
--- Coming soon (TM)
+function clear()
+ for i = 1,25 do
+  print("\n\n")
+ end
+end
+
+function rushell(code)
+io.write("Sorry but rushell is still in development.\n");
+end
+
+function rshelllaunch()
+while true do
+io.write("RUSHELL> ");
+code = io.read("*l");
+cmd = string.lower(code)
+rushell(code);
+wait(0.1);
+end
+end
 
 function check(code)
-cmd = string.lower(code)
 if cmd == "about" then
-io.write("Tagon is a small programming language for GEMS, it is still in early development. it might be discontinued if we do finish making the OS or it might just become a scripting language for GEMS, it only has one command and that's about which prints this message, We might add more commands but Tagon is really not that important but I just MIGHT develop it one day.\n");
+io.write("GEMS is a recursive acronym for Gems is Essentially Maybe Spinel. It was made by Oklomsy and Sparksammy (With a LOT of love!) now If you are running a old, working version of GEMS you might encounter this, this is just a small interface. this used to be a small shell called Rushell (Formerly Tagon but we decided to name our software after gems.) (RUby SHELL) but we decided to move it somewhere else and just added two commands. one for reading more info about the OS and the other for launching the OS.\n");
 end
 end
 
 io.write("GEMS LOADED SUCCESSFULLY! FINALLY!\n");
-io.write("We didn't plan this far ahead, so feel free to type Tagon code basic style while we create an actual OS..\n");
-io.write("Type about to see more information about Tagon\n");
+io.write("We didn't plan this far ahead, so feel free to do some stuff while we create an actual OS..\n");
+io.write("Type about to read more about this OS\n");
+io.write("Type launch to launch the basic login system!\n");
 while true do
-io.write("TAGON> ");
+io.write("GEMS> ");
 code = io.read("*l");
+cmd = string.lower(code)
+if code == "launch" then
+clear();
+io.write("Hello! Welcome to PearlCMD v1.0 BETA\n");
+io.write("Please login to use the CMD prompt\n");
+io.write("USERNAME: ");
+usr = io.read("*l");
+io.write("\n");
+clear();
+io.write("Welcome " .. usr .. " to the CMD prompt.\n");
+io.write("The OS has not been finished yet, it might take some time to finish developing PearlCMD.\n");
+rshelllaunch();
+break
+else
 check(code);
+end
 wait(0.1);
 end
