@@ -18,3 +18,7 @@ void wait(int microseconds) {
 int getTime() {
 	return time;
 }
+
+int setTime(int sec) {
+	time = ms;
+}
