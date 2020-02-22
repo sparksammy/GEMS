@@ -4,9 +4,9 @@
 #include "time.h" //Microsecond time.
 #include "standard_io.h" //I think this might have an issue. Not sure.
 #include <string.h> 
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
+#include "Lualibs/lua.h"
+#include "Lualibs/lauxlib.h"
+#include "Lualibs/lualib.h"
 //#include "crashhand.h" //Comming Soon(TM)
 //#include "sticky.h" //module deprecated. use new stick function and new function called delay.
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK

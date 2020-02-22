@@ -20,5 +20,5 @@ int getTime() {
 }
 
 int setTime(int sec) {
-	time = ms;
+	time = sec;
 }
