@@ -18,7 +18,7 @@ io.write("GEMS LOADED SUCCESSFULLY! FINALLY!\n");
 io.write("We didn't plan this far ahead, so feel free to type Tagon code basic style while we create an actual OS..\n");
 io.write("Type about to see more information about Tagon\n");
 while true do
-io.write("LUA> ");
+io.write("TAGON> ");
 code = io.read("*l");
 check(code);
 wait(0.1);
