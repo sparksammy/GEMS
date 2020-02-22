@@ -17,7 +17,6 @@ io.write("We didn't plan this far ahead, so feel free to type Tagon code basic s
 while true do
 io.write("LUA> ");
 code = io.read("*l");
-load(code)
 check(code);
 wait(0.1);
 end
