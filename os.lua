@@ -1,3 +1,5 @@
+args = {}
+
 function wait(s)
   local ntime = os.time() + s
   repeat until os.time() > ntime
@@ -10,15 +12,36 @@ function clear()
 end
 
 function rushell(code)
-io.write("Sorry but rushell is still in development.\n");
+for token in string.gmatch(line, "[^%s]+") do
+	table.insert(args, token)
+	wait(.3)
+	for i,ln in ipairs(args) do
+		if ln == "print" then
+			table.remove(args, 1)
+			_G.cmd = ln	  
+		end
+		end
+		end
+		if _G.cmd == "print" then
+			for argu,arguline in ipairs(args) do
+				if argu == #args then
+					io.write(arguline .. "\n")
+				else
+					io.write(arguline .. " ")
+				end
+			end
+
+end 
+args = {} --clean up
+
 end
 
 function rshelllaunch()
 while true do
-io.write("RUSHELL> ");
-code = io.read("*l");
-cmd = string.lower(code)
-rushell(code);
+io.write("RUSHELL@" .. usr .. "> ")
+line = io.read("*l");
+cmd = string.lower(line)
+rushell(cmd);
 wait(0.1);
 end
 end
