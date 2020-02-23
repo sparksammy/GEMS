@@ -3,7 +3,7 @@ GEMS - GEMS is ESSENTIALLY MAYBE SPINEL
 *Note: This is not Spinel, we are just trying to be better. ;)*
 Note: GEMS is in *really early development*, and will probably be that way for ***quite a while.***
 
-Seriously... You can't even boot this.
+Seriously... You can only boot to GRUB and were trying to fix that...
 
 However, here are the dependencies (in ubuntu) in case you *want* to compile this
 
