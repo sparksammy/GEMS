@@ -22,9 +22,11 @@ MEMINFO           equ     1<<1
 
 loader:
 	call kern
+	call exit ;crash, forgot to add
 
 exit:
 	hlt
 	jmp exit
 times 510-($-$$) db 0
 dw 0xAA55
+call loader ;darn i forgot to add this. probably whats causing the boot loop.
