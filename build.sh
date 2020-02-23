@@ -6,8 +6,8 @@ mkdir builds/iso/boot
 mkdir builds/iso/boot/grub
 echo "Building bootloader"
 nasm -f elf32 -o builds/blocks/bl.o bootloader.asm
-dd if="linker.ld" > "builds/iso/kernel.bin"
-dd if="builds/blocks/bl.o" >> "builds/iso/kernel.bin"
+dd if="linker.ld" > "builds/blocks/kernel.bin"
+dd if="builds/blocks/bl.o" >> "builds/blocks/kernel.bin"
 echo "Building OS"
 gcc os.c -g -c -ffreestanding -m32 -o builds/blocks/os.bin -I/home/$USER/lua/src -I/usr/include/lua5.1/ -I/usr/include/x86_64-linux-gnu/ -ldl -llua5.1
 echo "Finalizing OS Compile"
