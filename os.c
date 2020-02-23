@@ -41,11 +41,11 @@ void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear();
-	print("GEMS OK, WAITING 10 SECONDS TO TEST TIME...", 0x10);
+	print("GEMS OK, WAITING 10 SECONDS TO TEST TIME...", "\x1B[0m");
 	wait(10000000);
-	print("TIME OK. STARTING TIME SERVICE...", 0x10);
+	print("TIME OK. STARTING TIME SERVICE...", "\x1B[32m");
 	count();
-        print("Starting OS...", 0x10);
+        print("Starting OS...", "\x1B[32m");
 	os();
 	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
 	while (1 == 1) {
