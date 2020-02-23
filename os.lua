@@ -32,13 +32,15 @@ for token in string.gmatch(line, "[^%s]+") do
 				end
 			end
 		elseif _G.cmd == "version" then
-			io.write("Rushell version 0.4 Beta\n");
+			io.write("Rushell version 0.5 Beta\n");
 		elseif _G.cmd == "help" then
-			io.write("There are three commands:\n");
+			io.write("There are six commands:\n");
 			io.write("print - Prints to the console - Usage: print hello world\n");
 			io.write("version - prints the version - Usage: version\n");
 			io.write("help - lists all the different commands - Usage: help\n");
-			io.write("relogin - login with a different username - Usage: relogin\n")
+			io.write("relogin - login with a different username - Usage: relogin\n");
+			io.write("clear - clears the screen (not perfect) - Usage: clear\n");
+			io.write("about - About rushell.\n");
 		elseif _G.cmd == "relogin" then
 			io.write("New username: ");
 			usr = io.read("*l");
