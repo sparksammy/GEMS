@@ -7,4 +7,4 @@ Here is a list of all the bugs:
   * When running GEMS there is a bug that causes the OS to loop.  
   * We do not know the origin/source of this bug but it has not been fixed yet.
   * Main culprit: os.c
-  * Update: Potentially fixed in new bootloader.asm of all things, checked code before going to bed, saw the issue, and decided to fix it; learn more <a href="https://stackoverflow.com/questions/30682702/call-function-in-assembly" target="_blank">here.</a> (TLDR: forgot a call function. I, Sparksammy, am in fact stupid.)
+  * Update: Partially fixed in new bootloader.asm of all things, checked code before going to bed, saw the issue, and decided to fix it; learn more <a href="https://stackoverflow.com/questions/30682702/call-function-in-assembly" target="_blank">here.</a> (TLDR: forgot a call function. I, Sparksammy, am in fact stupid.)
