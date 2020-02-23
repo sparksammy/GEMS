@@ -30,6 +30,13 @@ for token in string.gmatch(line, "[^%s]+") do
 					io.write(arguline .. " ")
 				end
 			end
+		elseif _G.cmd == "version" then
+			io.write("Rushell version 1.0 Beta\n");
+		elseif _G.cmd == "help" then
+			io.write("There are three commands:\n");
+			io.write("print - Prints to the console - Usage: print hello world\n");
+			io.write("version - prints the version - Usage: version\n");
+			io.write("help - lists all the different commands - Usage: help\n");
 
 end 
 args = {} --clean up
@@ -38,7 +45,7 @@ end
 
 function rshelllaunch()
 while true do
-io.write("RUSHELL@" .. usr .. "> ")
+io.write(usr .. "@Rushell> ")
 line = io.read("*l");
 cmd = string.lower(line)
 rushell(cmd);
@@ -62,14 +69,14 @@ code = io.read("*l");
 cmd = string.lower(code)
 if code == "launch" then
 clear();
-io.write("Hello! Welcome to PearlCMD v1.0 BETA\n");
+io.write("Hello! Welcome to Rushell v1.0 BETA\n");
 io.write("Please login to use the CMD prompt\n");
 io.write("USERNAME: ");
 usr = io.read("*l");
 io.write("\n");
 clear();
-io.write("Welcome " .. usr .. " to the CMD prompt.\n");
-io.write("The OS has not been finished yet, it might take some time to finish developing PearlCMD.\n");
+io.write("Welcome " .. usr .. " to Rushell.\n");
+io.write("Rushell is still in early development but it works!\n");
 rshelllaunch();
 break
 else
