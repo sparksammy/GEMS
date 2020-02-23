@@ -12,4 +12,4 @@ echo "Finalizing OS Compile"
 ld -T linker.ld -m elf_i386 -o builds/iso/gems.bin builds/blocks/bl.o builds/blocks/os.o
 echo "multiboot /gems.bin" > builds/iso/boot/grub/grub.cfg
 echo "boot" >> builds/iso/boot/grub/grub.cfg
-grub-mkrescue -o builds/gems.iso builds/iso
+grub-mkrescue -d /usr/lib/grub/i386-pc -o builds/gems.iso builds/iso
