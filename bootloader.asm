@@ -18,7 +18,6 @@ mov ax, 7c0h
 mov ds, ax ;cannot be written directly
 MODULEALIGN       equ     1<<0
 MEMINFO           equ     1<<1
-FLAGS             equ     MODULEALIGN | MEMINFO
 
 
 loader:
