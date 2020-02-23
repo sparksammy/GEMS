@@ -12,6 +12,9 @@ echo "Finalizing OS Compile"
 echo "" > "builds/iso/gems.bin"
 dd if="builds/blocks/bl.bin" >> "builds/iso/gems.bin"
 dd if="builds/blocks/os.bin" >> "builds/iso/gems.bin"
-echo "multiboot /gems.bin" > builds/iso/boot/grub/grub.cfg
-echo "boot" >> builds/iso/boot/grub/grub.cfg
+echo "set default=0" > builds/iso/boot/grub/grub.cfg
+echo "set timeout=0" >> builds/iso/boot/grub/grub.cfg
+echo 'menuentry "GEMS" {' >> builds/iso/boot/grub/grub.cfg
+echo "  multiboot /gems.bin" >> builds/iso/boot/grub/grub.cfg
+echo "}" >> builds/iso/boot/grub/grub.cfg
 grub-mkrescue -d /usr/lib/grub/i386-pc -o builds/gems.iso builds/iso
