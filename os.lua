@@ -1,4 +1,5 @@
 args = {}
+usr = ""
 
 function wait(s)
   local ntime = os.time() + s
@@ -31,13 +32,20 @@ for token in string.gmatch(line, "[^%s]+") do
 				end
 			end
 		elseif _G.cmd == "version" then
-			io.write("Rushell version 1.0 Beta\n");
+			io.write("Rushell version 0.4 Beta\n");
 		elseif _G.cmd == "help" then
 			io.write("There are three commands:\n");
 			io.write("print - Prints to the console - Usage: print hello world\n");
 			io.write("version - prints the version - Usage: version\n");
 			io.write("help - lists all the different commands - Usage: help\n");
-
+			io.write("relogin - login with a different username - Usage: relogin\n")
+		elseif _G.cmd == "relogin" then
+			io.write("New username: ");
+			usr = io.read("*l");
+		elseif _G.cmd == "clear" or "cls" then
+			clear()
+		elseif _G.cmd == "about" then
+			io.write('Rushell is a small shell/scripting language for the GEMS OS, it was made by Oklomsy and sparksammy with lots of love, it is designed to be simple and delicate. the name comes from the acronym "RUby SHELL" \n');
 end 
 args = {} --clean up
 
