@@ -47,7 +47,7 @@ void kern() {
 	count();
         print("Starting OS...", "\x1B[32m");
 	os();
-	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
+	print("CRASH", "\x1B[0m"); //This needs to be here and not below because C i guess. This is outter boundries anyways.
 	while (1 == 1) {
 		halt();
 	}
