@@ -1,6 +1,33 @@
 args = {}
 ver = "0.7"
 
+--UDP packet send code begin
+function sendPacket(rec, cont)
+	local socket = require("socket")
+	local udp = assert(socket.udp())
+	local data
+
+	udp:settimeout(1)
+	assert(udp:setsockname("*",0))
+	assert(udp:setpeername(rec,1234))
+
+	for i = 0, 2, 1 do
+		assert(udp:send(cont))
+		data = udp:receive()
+		if data then
+  			break
+		end
+	end
+
+
+	if data == nil then
+		print("timeout")
+	else
+		print(data)
+	end
+end
+--End of socket code
+
 function wait(s)
   local ntime = os.time() + s
  repeat until os.time() > ntime
