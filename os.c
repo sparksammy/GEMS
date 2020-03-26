@@ -4,9 +4,9 @@
 #include "time.h" //Microsecond time.
 #include "standard_io.h" //I think this might have an issue. Not sure.
 #include <string.h> 
-#include "lua.h"
-#include "lauxlib.h"
-#include "lualib.h"
+#include "lua/include/lua.h"
+#include "lua/include/lauxlib.h"
+#include "lua/include/lualib.h"
 //#include "crashhand.h" //Comming Soon(TM)
 //#include "sticky.h" //module deprecated. use new stick function and new function called delay.
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
@@ -32,9 +32,10 @@ void halt() {
 }
 
 void os() {
-        lua_State *L = luaL_newstate();
+	lua_State *L;
+        L = luaL_newstate();
         luaL_openlibs(L);
-        luaL_dofile(L, "os.lua");
+        lua_dofile(L, "os.lua");
 }
 
 void kern() {
