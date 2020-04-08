@@ -10,6 +10,20 @@
 //#include "crashhand.h" //Comming Soon(TM)
 //#include "sticky.h" //module deprecated. use new stick function and new function called delay.
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
+typedef struct mboot_memmap {
+	unsigned int size;
+	unsigned int base_addr_low,base_addr_high;
+	unsigned int type;
+} mboot_memmap_t;
+
+typedef struct multiboot_info {
+	unsigned int mmap_addr;
+	unsigned int mmap_length;
+} multiboot_info;
+
+
+typedef mboot_memmap_t mmap_entry_t;
+
 int sticker = 0;
 
 void stickB() {
@@ -53,7 +67,11 @@ void kern() {
 		halt();
 	}
 }
-void main() {
+int main(struct multiboot_info* mbd, unsigned int magic) {
+	mmap_entry_t* entry = mbd->mmap_addr;
+	while(entry < mbd->mmap_addr + mbd->mmap_length) {
+		entry = (mmap_entry_t*) ((unsigned int) entry + entry->size + sizeof(entry->size));
+	}
 	kern();
 }
 //and we all *shut* down...

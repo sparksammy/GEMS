@@ -1,16 +1,20 @@
-MAGIC_NUMBER equ 0x1BADB002     ; define the magic number constant
-FLAGS        equ 0x0            ; multiboot flags
-CHECKSUM     equ -MAGIC_NUMBER  ; calculate the checksum
-                                    ; (magic number + checksum + flags should equal 0)
-
-section .text:                  ; start of the text (code) section
-align 4                         ; the code must be 4 byte aligned
-	dd MAGIC_NUMBER             ; write the magic number to the machine code,
-        dd FLAGS                    ; the flags,
-        dd CHECKSUM                 ; and the checksum
+SECTION .multiboot
+ALIGN 4
+mboot:
+    MULTIBOOT_PAGE_ALIGN   equ 1<<0
+    MULTIBOOT_MEMORY_INFO   equ 1<<1
+    MULTIBOOT_AOUT_KLUDGE   equ 1<<16
+    MULTIBOOT_HEADER_MAGIC   equ 0x1BADB002
+    MULTIBOOT_HEADER_FLAGS   equ MULTIBOOT_PAGE_ALIGN | MULTIBOOT_MEMORY_INFO | MULTIBOOT_AOUT_KLUDGE
+    MULTIBOOT_CHECKSUM   equ -(MULTIBOOT_HEADER_MAGIC + MULTIBOOT_HEADER_FLAGS)
+    EXTERN code, bss, end
+ 
+    dd MULTIBOOT_HEADER_MAGIC
+    dd MULTIBOOT_HEADER_FLAGS
+    dd MULTIBOOT_CHECKSUM
 	
 global exit
-extern kern
+extern main
 mov ax, 9ch
 mov ss, ax ;cannot be written directly
 mov sp, 4094d
@@ -21,7 +25,7 @@ MEMINFO           equ     1<<1
 
 
 loader:
-	call kern
+	call main
 	call exit ;crash, forgot to add
 
 exit:
