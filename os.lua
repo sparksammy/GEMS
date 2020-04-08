@@ -1,5 +1,5 @@
 args = {}
-ver = "0.7"
+ver = "0.72 - Working Edition"
 
 --UDP packet send code begin
 function sendPacket(rec, cont)
@@ -39,25 +39,17 @@ function clear()
  end
 end
 
+function dog(fn)
+	io.write(_G[fn] .. "\n");
+end
+
+function lf(fn)
+	loadstring(_G[fn] .. "\n");
+end
+
 function rushell(code)
-for token in string.gmatch(line, "[^%s]+") do
-	table.insert(args, token)
-	wait(.3)
-	for i,ln in ipairs(args) do
-		if ln == "print" then
-			table.remove(args, 1)
-			_G.cmd = ln	  
-		end
-		end
-		end
-		if _G.cmd == "print" then
-			for argu,arguline in ipairs(args) do
-				if argu == #args then
-					io.write(arguline .. "\n")
-				else
-					io.write(arguline .. " ")
-				end
-			end
+		if string.find(_G.cmd, "print") then
+			io.write(string.gsub(_G.cmd, "print " , "") .. "\n")
 		elseif _G.cmd == "version" then
 			io.write("Rushell version " .. ver .. " Beta\n");
 		elseif _G.cmd == "help" then
@@ -77,8 +69,16 @@ for token in string.gmatch(line, "[^%s]+") do
 		elseif _G.cmd == "prompt" then
 			io.write("Press any key to continue");
 			io.read("*l");
+		elseif string.find(_G.cmd, "loadfile")  then
+			lf(string.gsub(_G.cmd, "loadfile ", "")) --not complete, broken.
+		elseif string.find(_G.cmd, "loadstring")  then
+			loadstring(string.gsub(_G.cmd, "loadstring ", "")) --not complete, broken.
 		elseif _G.cmd == "micro" then
 			dofile("micro.lua");
+		elseif string.find(_G.cmd, "dog")  then
+			dog(string.gsub(_G.cmd, "dog ", ""))
+		else
+			io.write("Unknown command!" .. "\n")
 end 
 args = {}
 
