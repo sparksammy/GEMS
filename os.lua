@@ -77,7 +77,8 @@ for token in string.gmatch(line, "[^%s]+") do
 		elseif _G.cmd == "prompt" then
 			io.write("Press any key to continue");
 			io.read("*l");
-			
+		elseif _G.cmd == "micro" then
+			dofile("micro.lua");
 end 
 args = {}
 
