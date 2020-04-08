@@ -25,6 +25,12 @@ end
 
 io.write("File name:");
 fn = io.read("*l");
+
+if _G[fn] ~= nil then
+	_G.buffer = _G[fn]
+else
+	_G.buffer = ""
+end
 while exitmicro == false do
 io.write("->");
 line = io.read("*l");

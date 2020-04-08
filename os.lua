@@ -60,6 +60,8 @@ function rushell(code)
 			io.write("clear - clears the screen (not perfect) - Usage: clear\n");
 			io.write("about - About rushell. - Usage: about\n");
 			io.write("prompt - Waits until the user presses any key.\n");
+			io.write("dog - cat alternative\n");
+			io.write("micro - auto-saving text editor\n");
 		elseif _G.cmd == "clear" then
 			clear();
 		elseif _G.cmd == "about" then
