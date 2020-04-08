@@ -1,1 +1,1 @@
-qemu-system-i386 -kernel builds/iso/gems.bin
+qemu-system-i386 -kernel builds/iso/gems.elf
