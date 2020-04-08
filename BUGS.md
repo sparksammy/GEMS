@@ -1,8 +1,6 @@
 Here is a list of all the bugs:
 
-~~0. Linker error (Seems it can't find LUA)~~
-  ~~* Does not say "llua not found" unless we do -llua~~
-  ~~* We provide liblua via source for lua5.0 and it seems that it doesn't know the functions, even though we provided the functions via a library? What the fudge?~~
-1. GRUB says "Invalid *arch-dependent* ELF magic." (STILL NOT FIXED :-1:)
-  * We do not know the origin/source of this bug but it has not been fixed yet. (Might be due to how we compile)
-  * Main culprits: build.sh, bootloader.asm, os.c
+Finally the "Invalid *arch-dependent* ELF magic." bug is fixed. :+1: However, that doesn't mean we are bug free...
+1. Out of memory
+  * Need to work on memory managment
+2. invalid mh_load_addr address on kernel boot (could be related to problem 1?)
