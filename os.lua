@@ -1,5 +1,5 @@
 args = {}
-ver = "0.72 - Working Edition"
+ver = "0.721 - DIY App Update!"
 
 --UDP packet send code begin
 function sendPacket(rec, cont)
@@ -44,7 +44,7 @@ function dog(fn)
 end
 
 function lf(fn)
-	loadstring(_G[fn] .. "\n");
+	assert(loadstring(_G[fn] .. "\n"))();
 end
 
 function rushell(code)
@@ -72,9 +72,9 @@ function rushell(code)
 			io.write("Press any key to continue");
 			io.read("*l");
 		elseif string.find(_G.cmd, "loadfile")  then
-			lf(string.gsub(_G.cmd, "loadfile ", "")) --not complete, broken.
+			lf(string.gsub(_G.cmd, "loadfile ", ""))
 		elseif string.find(_G.cmd, "loadstring")  then
-			loadstring(string.gsub(_G.cmd, "loadstring ", "")) --not complete, broken.
+			assert(loadstring(string.gsub(_G.cmd, "loadstring ", "")))();
 		elseif _G.cmd == "micro" then
 			dofile("micro.lua");
 		elseif string.find(_G.cmd, "dog")  then
