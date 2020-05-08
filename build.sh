@@ -7,19 +7,12 @@ mkdir builds/iso
 mkdir builds/iso/boot
 mkdir builds/iso/boot/grub
 echo "Building bootloader"
-nasm -f elf32 -o builds/blocks/bl.elf bootloader.asm
+/opt/cross/bin/i686-elf-gcc -std=gnu99 -ffreestanding -g -c start.s -o builds/blocks/bl.o
 echo "Building OS"
-/opt/cross/bin/i386-elf-gcc os.c -g -c -ffreestanding -m32 -o builds/blocks/os.elf -I/usr/include -I"lua/src" -I/usr/include/lua5.1/ -I/usr/include/x86_64-linux-gnu/ -ldl -llua50
-echo "Transforming ELF files to HEX"
-objcopy builds/blocks/bl.elf -O ihex builds/blocks/bl.elf.hex
-objcopy builds/blocks/os.elf -O ihex builds/blocks/os.elf.hex
-echo "Combining HEX"
-cat builds/blocks/bl.elf.hex builds/blocks/os.elf.hex > builds/blocks/combined.elf.hex
-echo "Transforming HEX back into ELF"
-objcopy -I ihex builds/blocks/combined.elf.hex -O elf32-i386 builds/iso/gems.elf
+/opt/cross/bin/i686-elf-gcc builds/blocks/bl.o os.c -g -ffreestanding -m32 -o builds/iso/gems.elf -I"lua-precomp/" -I"/usr/include" -nostdlib
 echo "Creating GRUB config"
 echo "set default=0" > builds/iso/boot/grub/grub.cfg
-echo "set timeout=0" >> builds/iso/boot/grub/grub.cfg
+echo "set timeout=60" >> builds/iso/boot/grub/grub.cfg
 echo 'menuentry "GEMS" {' >> builds/iso/boot/grub/grub.cfg
 echo "  multiboot /gems.elf" >> builds/iso/boot/grub/grub.cfg
 echo "  boot" >> builds/iso/boot/grub/grub.cfg
