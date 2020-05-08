@@ -129,9 +129,15 @@ int lastVGATextColor() {
 }
 
 void basickeys() {
-	asm("in al,0x6");
-	asm("mov al, 0x16");
-	print(0x16); //try to print what's in memory
-	asm("out 0x16,al");
-	asm("pop eax");
+	asm("in al,0x6"); //don't damage current state
+	asm("mov al, 0x16"); //read info from keyboard
+	//do something
+	char *ptr = 0x16; //pointer var
+	while(*ptr != '\0') {
+		print(*ptr); //try to print what's in memory
+		ptr++; //add 1 to ptr
+	}
+	//do something end
+	asm("out 0x16,al"); //acknoledge interrupt to the PIC
+	asm("pop eax"); //restore state
 }
