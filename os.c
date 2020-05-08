@@ -1,15 +1,19 @@
 //GEMS BY SPARKSAMMY
-#include <stdio.h> //needed for delay and DiamondFS
-#include <stdlib.h> //needed for delay
+#include <stdint.h>
+#include <stddef.h>
 #include "time.h" //Microsecond time.
-#include "standard_io.h" //I think this might have an issue. Not sure.
-#include <string.h> 
-#include "lua/include/lua.h"
-#include "lua/include/lauxlib.h"
-#include "lua/include/lualib.h"
+#include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
+#include "rushell.h" // Should always be at the bottom
+//#include "keymap.h" // not ready yet...
 //#include "crashhand.h" //Comming Soon(TM)
 //#include "sticky.h" //module deprecated. use new stick function and new function called delay.
 //#include "diamondfs.h" //BORKED - USE AT YOUR OWN RISK
+
+#if defined(__linux__)
+	#error "This code must be compiled with a cross-compiler"
+#elif !defined(__i386__)
+	#error "This code must be compiled with an x86-elf cross-compiler"
+#endif
 typedef struct mboot_memmap {
 	unsigned int size;
 	unsigned int base_addr_low,base_addr_high;
@@ -23,6 +27,7 @@ typedef struct multiboot_info {
 
 
 typedef mboot_memmap_t mmap_entry_t;
+typedef multiboot_info mmap_addr_length;
 
 int sticker = 0;
 
@@ -42,32 +47,33 @@ void unstick() {
 }
 
 void halt() {
-	//do nothing... :)
+	stick(); //do nothing... :)
 }
 
 void os() {
-	lua_State *L;
-        L = luaL_newstate();
-        luaL_openlibs(L);
-        lua_dofile(L, "os.lua");
+	rloadstring("welcomescreen");
+	rloadstring("helpscreen");
+	stick();
 }
 
 void kern() {
 	//extern bootloader();
 	//bootloader();
-	clear();
-	print("GEMS OK, WAITING 10 SECONDS TO TEST TIME...", 0x10);
-	wait(10000000);
-	print("TIME OK. STARTING TIME SERVICE...", 0x10);
-	count();
-        print("Starting OS...", 0x10);
+	clear(lastVGATextColor());
+	//print("GEMS OK, WAITING A FEW MICROSECONDS TO TEST TIME...", 0x10); //time is broken for now
+	//count(); //so we skip this
+	//wait(3); //ok? ok.
+	print("Starting OS...");
+	clear(lastVGATextColor());
 	os();
-	print("CRASH", 0x0f); //This needs to be here and not below because C i guess. This is outter boundries anyways.
-	while (1 == 1) {
-		halt();
+	while (1 == 1)
+	{
+	clear(lastVGATextColor());
+	vgaprint("KERNEL-LEVEL CRASH", 0x0f);
+	halt();
 	}
 }
-int main(struct multiboot_info* mbd, unsigned int magic) {
+int kernel_main(struct multiboot_info* mbd, unsigned int magic) {
 	mmap_entry_t* entry = mbd->mmap_addr;
 	while(entry < mbd->mmap_addr + mbd->mmap_length) {
 		entry = (mmap_entry_t*) ((unsigned int) entry + entry->size + sizeof(entry->size));

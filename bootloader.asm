@@ -1,3 +1,5 @@
+/* Deprecated */
+/* New one is start.s */
 SECTION .multiboot
 ALIGN 4
 mboot:
@@ -14,7 +16,7 @@ mboot:
     dd MULTIBOOT_CHECKSUM
 	
 global exit
-extern main
+extern _start
 mov ax, 9ch
 mov ss, ax ;cannot be written directly
 mov sp, 4094d
@@ -25,7 +27,7 @@ MEMINFO           equ     1<<1
 
 
 loader:
-	call main
+	call _start
 	call exit ;crash, forgot to add
 
 exit:

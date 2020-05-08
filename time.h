@@ -3,15 +3,17 @@
 int time = 1;
 
 void count() {
-	while(1) {
+	while(1 == 1) {
 		time++;
 	}
 }
 
 void wait(int microseconds) {
 	int futureTime = microseconds + time;
-	while(futureTime > time) {
-		//do nothing
+	while(1 == 1) {
+		if (futureTime <= time) {
+			break;
+		}
 	}
 }
 
