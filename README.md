@@ -14,9 +14,9 @@ sudo apt install -y build-essential grub-common nasm gcc git qemu-system-i386 gr
 
 Oh and also: You really need an *i686 cross compiler,* I reccomend this one here: https://drive.google.com/file/d/0Bw6lG3Ej2746STJaM2dNbC05elE/view?usp=sharing
 
-~~(Hint, download LUA 5.0 source here: https://www.lua.org/ftp/lua-5.0.tar.gz)~~
+~~(Hint, download LUA 5.0 source here: https://www.lua.org/ftp/lua-5.0.tar.gz)~~ Update: We are switching to mostly custom C/ASM
 
-*(Yes, we are using grub. No I, Sparksammy, don't really care; the source code is in a different place afterall, but we are using packages and not using our own source code, so it should be compliant with our licenses. Please don't sue if it is, just fork and send a pull request to remove the offending code, and fixing the current code that relies on current libraries. Remember we are very young and don't know the law very well, so we will most likely lose the lawsuit and you know it. ;] )*
+*(Yes, we are using grub. No I, Sparksammy, don't really care; the source code is in a different place afterall, but we are using packages and not using our own source code to compile for our GRUB, so it should be compliant with our licenses. Please don't sue if it is, just fork and send a pull request to remove the offending code, and fixing the current code that relies on current libraries. Remember we are very young and don't know the law very well, so we will most likely lose the lawsuit and you know it. ;] )*
 
 # Other files
 
