@@ -1,3 +1,6 @@
+--NOTE TO DEVS:
+--THESE LUA FILES ARE DEPRECATED..
+--USE RUSHELL.H INSTEAD...
 fn = ""
 file = ""
 _G.buffer = ""
