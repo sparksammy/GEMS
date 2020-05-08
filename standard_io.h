@@ -127,3 +127,11 @@ void vgaprint(char *text, int color) {
 int lastVGATextColor() {
 	return lc;
 }
+
+void basickeys() {
+	asm("in al,0x6");
+	asm("mov al, 0x16");
+	print(0x16); //try to print what's in memory
+	asm("out 0x16,al");
+	asm("pop eax");
+}

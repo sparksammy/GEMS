@@ -1,6 +1,9 @@
 //GEMS BY SPARKSAMMY
+#include "strcmp.h" //Microsecond time.
+#include <string.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdio.h>
 #include "time.h" //Microsecond time.
 #include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
 #include "rushell.h" // Should always be at the bottom
@@ -53,7 +56,9 @@ void halt() {
 void os() {
 	rloadstring("welcomescreen");
 	rloadstring("helpscreen");
-	stick();
+	while ( 1 == 1 ) {
+		rloadstring("getkey");
+	}
 }
 
 void kern() {

@@ -16,5 +16,7 @@ void rloadstring(cmd, var1, var2) {
 		print("More? Less? Who knows?");
 		print(" It just depends on how we feel...\n");
 		print("--The GEMS Team");
+	} else if (cmd == "getkey") {
+		basickeys();
 	}
 }
