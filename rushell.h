@@ -49,5 +49,7 @@ void rloadstring(cmd, var1, var2) {
 		setTermColor(0x0F);
 	} else if (cmd == "getkey") {
 		basickeys();
+	} else if (cmd == "cli") {
+		
 	}
 }

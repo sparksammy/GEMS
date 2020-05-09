@@ -2,6 +2,7 @@ int x = 0;
 int y = 0;
 int lc = 0;
 int VGA_WIDTH = 24;
+char *line = 0x00;
 
 void clear() {
 	char *mem = (char*)0xb8000;
@@ -142,7 +143,8 @@ void basickeys() {
 	//do something
 	char *ptr = 0x16; //pointer var
 	while(*ptr != '\0') {
-		print(*ptr); //try to print what's in memory
+		*line = *ptr;
+		print(ptr); //try to print what's in memory
 		ptr++; //add 1 to ptr
 	}
 	//do something end

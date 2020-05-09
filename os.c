@@ -1,5 +1,5 @@
 //GEMS BY SPARKSAMMY
-#include "strcmp.h" //Microsecond time.
+#include "strcmp.h" //Compare string lib
 #include <string.h>
 #include <stdint.h>
 #include <stddef.h>
@@ -58,7 +58,7 @@ void os() {
 	rloadstring("helpscreen");
 	rloadstring("debugRainbow");
 	while ( 1 == 1 ) {
-		rloadstring("getkey");
+		rloadstring("basickeys");
 	}
 }
 
