@@ -1,9 +1,9 @@
 # <img src="gems.png" alt="Logo" width="5%"/> GEMS
 GEMS - GEMS is ESSENTIALLY MAYBE SPINEL
 *Note: This is not Spinel, we are just trying to be better. ;)*
-Note: GEMS is in *really early development*, and will probably be that way for ***quite a while.*** Note: This is highly based off of https://wiki.osdev.org/ user Zesterer's Bare_Bones, however it is modified quite a bit to work for us.
+Note: GEMS is in *really early development*, and will probably be that way for ***quite a while.*** Note: This is highly based off of https://wiki.osdev.org/ and user Zesterer's Bare_Bones, however it is modified quite a bit to work for us.
 
-Seriously... You can only boot to GRUB and we are trying to fix that...
+Seriously... You can only boot to a small splash screen, you can't even type anything...
 
 However, here are the dependencies (in ubuntu) in case you *want* to compile this
 
