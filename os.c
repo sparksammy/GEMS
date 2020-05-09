@@ -56,6 +56,7 @@ void halt() {
 void os() {
 	rloadstring("welcomescreen");
 	rloadstring("helpscreen");
+	rloadstring("debugRainbow");
 	while ( 1 == 1 ) {
 		rloadstring("getkey");
 	}

@@ -128,6 +128,14 @@ int lastVGATextColor() {
 	return lc;
 }
 
+void setTermColor(uint8_t color) {
+	term_color = color;
+}
+
+uint8_t termColor() {
+	return term_color;
+}
+
 void basickeys() {
 	asm("in al,0x6"); //don't damage current state
 	asm("mov al, 0x16"); //read info from keyboard
