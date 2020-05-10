@@ -1,1 +1,1 @@
-qemu-system-i386 -cdrom builds/gems.iso -m 2048
+qemu-system-i386 -soundhw pcspk -cdrom builds/gems.iso -m 2048

@@ -1,11 +1,14 @@
 //GEMS BY SPARKSAMMY
 #include "strcmp.h" //Compare string lib
 #include <string.h>
-#include <stdint.h>
+#include <unistd.h> //needed for time.h
+#include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
-#include "time.h" //Microsecond time.
+#include "time.h" //Second time.
 #include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
+#include "pcspeaker.h" //Second time.
 #include "rushell.h" // Should always be at the bottom
 //#include "keymap.h" // not ready yet...
 //#include "crashhand.h" //Comming Soon(TM)
@@ -66,9 +69,9 @@ void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear(lastVGATextColor());
-	//print("GEMS OK, WAITING A FEW MICROSECONDS TO TEST TIME...", 0x10); //time is broken for now
-	//count(); //so we skip this
-	//wait(3); //ok? ok.
+	print("GEMS OK, WAITING A MICROSECONDS TO TEST TIME...");
+	wait(3); //ok? ok.
+	beep();
 	print("Starting OS...");
 	clear(lastVGATextColor());
 	os();
