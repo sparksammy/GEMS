@@ -157,16 +157,16 @@ uint8_t termColor() {
 }
 
 void basickeys() {
-	asm("in al,0x6"); //don't damage current state
-	asm("mov al, 0x16"); //read info from keyboard
+	//asm("in al,0x6"); //don't damage current state
+	//asm("mov al, 0x16"); //read info from keyboard
 	//do something
-	char *ptr = 0x16; //pointer var
-	while(*ptr != '\0') {
-		*line = *ptr;
-		print(ptr); //try to print what's in memory
-		ptr++; //add 1 to ptr
-	}
+	//char *ptr = 0x16; //pointer var
+	//while(*ptr != '\0') {
+		//*line = *ptr;
+		//print(ptr); //try to print what's in memory
+		//ptr++; //add 1 to ptr
+	//}
 	//do something end
-	asm("out 0x16,al"); //acknoledge interrupt to the PIC
-	asm("pop eax"); //restore state
+	//asm("out 0x16,al"); //acknoledge interrupt to the PIC
+	//asm("pop eax"); //restore state
 }

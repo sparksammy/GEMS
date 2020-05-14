@@ -70,6 +70,7 @@ void kern() {
 	//bootloader();
 	clear(lastVGATextColor());
 	print("GEMS OK, WAITING A MICROSECONDS TO TEST TIME...");
+	count();
 	wait(3); //ok? ok.
 	beep();
 	print("Starting OS...");
