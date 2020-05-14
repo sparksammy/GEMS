@@ -6,7 +6,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "time.h" //Second time.
+#include "time.h" //100000000 TPS time.
 #include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
 #include "pcspeaker.h" //Second time.
 #include "rushell.h" // Should always be at the bottom
@@ -69,11 +69,11 @@ void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear(lastVGATextColor());
-	print("GEMS OK, WAITING A MICROSECONDS TO TEST TIME...");
-	count();
-	wait(3); //ok? ok.
+	print("GEMS OK, WAITING A FEW TICKS TO TEST TIME...");
+	wait(100000000); //ok? ok.
 	beep();
 	print("Starting OS...");
+	waitSecs(5);
 	clear(lastVGATextColor());
 	os();
 	while (1 == 1)

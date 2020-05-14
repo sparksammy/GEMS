@@ -26,7 +26,14 @@
  //Make a beep
  void beep() {
  	 play_sound(1000);
- 	 wait(1);
+ 	 wait(10000000);
+ 	 nosound();
+          //set_PIT_2(old_frequency);
+ }
+ 
+ void beepTone(int frequency, int secs) {
+ 	 play_sound(frequency);
+ 	 waitSecs(secs);
  	 nosound();
           //set_PIT_2(old_frequency);
  }
