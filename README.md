@@ -18,6 +18,8 @@ Oh and also: You really need an *i686 cross compiler,* I reccomend this one here
 
 *(Yes, we are using grub. No I, Sparksammy, don't really care; the source code is in a different place afterall, but we are using packages and not using our own source code to compile for our GRUB, so it should be compliant with our licenses. Please don't sue if it is, just fork and send a pull request to remove the offending code, and fixing the current code that relies on current libraries. Remember we are very young and don't know the law very well, so we will most likely lose the lawsuit and you know it. ;] )*
 
+Oh and a quick warning: *Test.sh / Qemu's PC SPEAKER is VERY LOUD. You will want to turn down your volume.*
+
 # Other files
 
 BUGS.md is for listing all the different bugs and their origins/source and status.
