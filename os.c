@@ -8,7 +8,8 @@
 #include <stdio.h>
 #include "time.h" //100000000 TPS time.
 #include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
-#include "pcspeaker.h" //Second time.
+#include "pcspeaker.h" //PC speaker support
+#include "midi.h" //PC speaker MIDI support
 #include "rushell.h" // Should always be at the bottom
 //#include "keymap.h" // not ready yet...
 //#include "crashhand.h" //Comming Soon(TM)
@@ -72,6 +73,7 @@ void kern() {
 	print("GEMS OK, WAITING A FEW TICKS TO TEST TIME...");
 	wait(100000000); //ok? ok.
 	beep();
+	//noteOf("a#2"); //borked for now
 	print("Starting OS...");
 	waitSecs(5);
 	clear(lastVGATextColor());
