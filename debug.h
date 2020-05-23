@@ -42,7 +42,7 @@ void unhalt() {
 }
 
 void panic(char deets[128]) {
-    clear(lastVGATextColor());
+    clear(); //takes no arguments, oklomsy...
     print("\nGEMS has somehow been borked.\n Error code: ");
     print(deets);
     print("\n");
