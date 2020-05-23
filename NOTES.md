@@ -8,3 +8,5 @@ this link is useful since it teaches you how to call lua from a running C progra
 Seeking outside the file? Try changing linker.ld and changing your bootloader to start.s! Modify accordingly.
 
 *You really do need a i686 cross-compiler, get one here: https://drive.google.com/file/d/0Bw6lG3Ej2746STJaM2dNbC05elE/view?usp=sharing*
+
+Also: I just commited something to make oklomsy pissed. LOL!
