@@ -40,7 +40,7 @@ typedef multiboot_info mmap_addr_length;
 void os() {
 	rloadstring("welcomescreen");
 	rloadstring("helpscreen");
-	panic("TEST"); //uncomment to test panicing
+	//panic("TEST"); //uncomment to test panicing
 	rloadstring("debugRainbow");
 	while ( 1 == 1 ) {
 		rloadstring("basickeys");
