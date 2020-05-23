@@ -25,3 +25,40 @@ Oh and a quick warning: *Test.sh / Qemu's PC SPEAKER is VERY LOUD. You will want
 BUGS.md is for listing all the different bugs and their origins/source and status.
 
 NOTES.md is for listing everything we have learned so far.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fuck you sam. From oklomsy with love.
