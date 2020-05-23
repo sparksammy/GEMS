@@ -41,21 +41,12 @@ void unhalt() {
 	unstick(); //resume... :)
 }
 
-void panic(char deets[128]) {
-    clear(); //takes no arguments, oklomsy...
-    print("\nGEMS has somehow been borked.\n Error code: ");
-    print(deets);
-    print("\n");
-    print("For now, try restarting your computer or file a bug report.\n");
-    print("When filing a bug report, then please give us information about your computer.\n");
-    print("tell us about your computer's architecture.\n");
-    print("does it support VGA?\n");
-    print("does it support GRUB?\n");
-    print("Is it scared of Microsoft? (jk)\n");
-    print("Debugging details:\n");
-    print("\nIf you hear a beep then PC Speakers are working fine.");
-    beep();
-    print("\nAre colors working: (Order: Blue,Green,Lightblue,Red,Pink,Orange,White.)\n");
+void doubleBeep() {
+	beep();
+	beep();
+}
+
+void showColors() {
     setTermColor(0x19);
     print("Blue ");
     setTermColor(0x2A);
@@ -71,6 +62,24 @@ void panic(char deets[128]) {
     setTermColor(0x7F);
     print("White ");
     setTermColor(0x0F);
+}
+
+void panic(char deets[128]) {
+    clear(); //takes no arguments, oklomsy...
+    print("\nGEMS has somehow been borked.\n Error code: ");
+    print(deets);
+    print("\n");
+    print("For now, try restarting your computer or file a bug report.\n");
+    print("When filing a bug report, then please give us information about your computer.\n");
+    print("tell us about your computer's architecture.\n");
+    print("does it support VGA?\n");
+    print("does it support GRUB?\n");
+    print("Is it scared of Microsoft? (jk)\n");
+    print("Debugging details:\n");
+    print("\nIf you hear a beep then PC Speakers are working fine.");
+    doubleBeep();
+    print("\nAre colors working: (Order: Blue,Green,Lightblue,Red,Pink,Orange,White.)\n");
+    showColors();
     print("Regular\n");
     halt();
 }
