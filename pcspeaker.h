@@ -28,12 +28,17 @@
  	 play_sound(1000);
  	 wait(10000000);
  	 nosound();
-          //set_PIT_2(old_frequency);
+ }
+ 
+  //Make a beep
+ void beepToneShort(int frequency) {
+ 	 play_sound(1000);
+ 	 wait(frequency);
+ 	 nosound();
  }
  
  void beepTone(int frequency, int secs) {
  	 play_sound(frequency);
  	 waitSecs(secs);
  	 nosound();
-          //set_PIT_2(old_frequency);
  }

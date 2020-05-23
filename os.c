@@ -70,11 +70,14 @@ void kern() {
 	//extern bootloader();
 	//bootloader();
 	clear(lastVGATextColor());
-	print("GEMS OK, WAITING A FEW TICKS TO TEST TIME...");
+	print("GEMS OK, WAITING A FEW TICKS TO TEST TIME... \n");
 	wait(100000000); //ok? ok.
 	beep();
-	//noteOf("a#2"); //borked for now
-	print("Starting OS...");
+	print("Getting frequency of A2 \n");
+	print("(might be garbled until fixed) \n");
+	print(freqOfAsStr("a#2")); //wow.
+	print("\n");
+	print("Everything seems fine. Starting OS...");
 	waitSecs(5);
 	clear(lastVGATextColor());
 	os();
