@@ -43,7 +43,9 @@ void unhalt() {
 
 void panic(char deets[128]) {
     clear(lastVGATextColor());
-    print("\nGEMS has somehow been borked.\n Error code: " + deets + "\n");
+    print("\nGEMS has somehow been borked.\n Error code: ");
+    print(deets);
+    print("\n");
     print("For now, try restarting your computer or file a bug report.\n");
     print("When filing a bug report, then please give us information about your computer.\n");
     print("tell us about your computer's architecture.\n");
@@ -55,20 +57,20 @@ void panic(char deets[128]) {
     beep();
     print("\nAre colors working: (Order: Blue,Green,Lightblue,Red,Pink,Orange,White.)\n");
     setTermColor(0x19);
-    print("Blue\n");
+    print("Blue ");
     setTermColor(0x2A);
-    print("Green\n");
+    print("Green ");
     setTermColor(0x3B);
-    print("Lightblue\n");
+    print("Lightblue ");
     setTermColor(0x4C);
-    print("Red\n");
+    print("Red ");
     setTermColor(0x5D);
-    print("Pink\n");
+    print("Pink ");
     setTermColor(0x6E);
-    print("Orange\n");
+    print("Orange ");
     setTermColor(0x7F);
-    print("White\n");
+    print("White ");
     setTermColor(0x0F);
-    print("--------\n");
+    print("Regular\n");
     halt();
 }
