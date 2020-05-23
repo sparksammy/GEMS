@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include "time.h" //100000000 TPS time.
 #include "standard_io.h" //I think this might have an issue. Not sure. (contains print and clear)
+#include "debug.h" //panic and stuff
 #include "pcspeaker.h" //PC speaker support
 #include "midi.h" //PC speaker MIDI support
 #include "rushell.h" // Should always be at the bottom
@@ -36,34 +37,15 @@ typedef struct multiboot_info {
 typedef mboot_memmap_t mmap_entry_t;
 typedef multiboot_info mmap_addr_length;
 
-int sticker = 0;
-
-void stickB() {
-	//do nothing
-}
-
-void stick() {
-	sticker = 1;
-	while(sticker > 0) {
-		stickB();
-	}
-}
-
-void unstick() {
-	sticker = 0;
-}
-
-void halt() {
-	stick(); //do nothing... :)
-}
-
 void os() {
 	rloadstring("welcomescreen");
 	rloadstring("helpscreen");
+	//panic("TEST"); //uncomment to test panicing
 	rloadstring("debugRainbow");
 	while ( 1 == 1 ) {
 		rloadstring("basickeys");
 	}
+	panic("RUSHELL-LEVEL CRASH");
 }
 
 void kern() {
@@ -83,9 +65,7 @@ void kern() {
 	os();
 	while (1 == 1)
 	{
-	clear(lastVGATextColor());
-	vgaprint("KERNEL-LEVEL CRASH", 0x0f);
-	halt();
+	panic("KERNEL-LEVEL CRASH");
 	}
 }
 int kernel_main(struct multiboot_info* mbd, unsigned int magic) {

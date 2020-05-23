@@ -106,6 +106,7 @@ void print(const char* str)
 		printc(str[i]);
 }
 
+//DO NOT USE
 void vgaprint(char *text, int color) {
 	lc = color;
 	char *mem = (char*)0xb8000;

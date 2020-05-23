@@ -1,0 +1,74 @@
+int sticker = 0;
+
+void stick() {
+	static long long int i; 
+	static int state = 0; 
+	switch (state) 
+	{ 
+		case 0: /* start of function */
+		sticker = 1;
+		while(sticker > 0) {
+			/* Returns control */
+			case 1:; /* resume control straight 
+			after the return */
+		}
+	}
+	state = 0; 
+	return 0; 
+	
+}
+
+void unstick() {
+	static long long int i; 
+	static int state = 0; 
+	switch (state) 
+	{ 
+		case 0: /* start of function */
+		sticker = 0;
+	/* Returns control */
+	case 1:; /* resume control straight 
+	after the return */
+	}
+	state = 0; 
+	return 0; 
+}
+
+void halt() {
+	stick(); //do nothing... :)
+}
+
+void unhalt() {
+	unstick(); //resume... :)
+}
+
+void panic(char deets[128]) {
+    clear(lastVGATextColor());
+    print("\nGEMS has somehow been borked.\n Error code: " + deets + "\n");
+    print("For now, try restarting your computer or file a bug report.\n");
+    print("When filing a bug report, then please give us information about your computer.\n");
+    print("tell us about your computer's architecture.\n");
+    print("does it support VGA?\n");
+    print("does it support GRUB?\n");
+    print("Is it scared of Microsoft? (jk)\n");
+    print("Debugging details:\n");
+    print("\nIf you hear a beep then PC Speakers are working fine.");
+    beep();
+    print("\nAre colors working: (Order: Blue,Green,Lightblue,Red,Pink,Orange,White.)\n");
+    setTermColor(0x19);
+    print("Blue\n");
+    setTermColor(0x2A);
+    print("Green\n");
+    setTermColor(0x3B);
+    print("Lightblue\n");
+    setTermColor(0x4C);
+    print("Red\n");
+    setTermColor(0x5D);
+    print("Pink\n");
+    setTermColor(0x6E);
+    print("Orange\n");
+    setTermColor(0x7F);
+    print("White\n");
+    setTermColor(0x0F);
+    print("--------\n");
+    halt();
+}

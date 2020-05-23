@@ -5,8 +5,8 @@ int tune = 440; //440hz frequency
 int round = 0;
 int roundResetable = 0;
 int freqOf(n) {
-	char currentNote = "";
-	char currentNoteNumStr = "";
+	char currentNote[128] = "";
+	char currentNoteNumStr[128] = "";
 	char midiNote[127]; //127 is size in this case
 	for (int x = 0; x < 127; ++x)
 	{

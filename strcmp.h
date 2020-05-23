@@ -15,5 +15,5 @@ void strcmpequal(char a, char b) {
 }
 
 void strcmpdone() {
-	// TODO
+	return 1;
 }
