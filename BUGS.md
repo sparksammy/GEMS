@@ -1,4 +1,5 @@
+Finally! *we boot!* But that doesn't mean we are bug free!
+
 Here is a list of all the bugs:
 
-Finally the "Invalid *arch-dependent* ELF magic." bug is fixed, and so is the memory issue with QEMU. :+1: However, that doesn't mean we are bug free...
-1. invalid load_addr address on kernel boot
+1. midi.h's freqOf and freqOfAsStr returns a garbled mess. :-(
