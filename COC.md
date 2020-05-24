@@ -1,10 +1,10 @@
-# Sparksammy Code of Conduct 1.01
+# Sparksammy Code of Conduct 1.02
 We, overall, must follow one simple rule to each other: *Stay excellent to each other.* This includes but is not limited to:
 * Using welcoming behavior and language.
 * Do not cuss or use bad language unless you feel strongly about a subject
   * Basically: Do not abuse bad language
 * No sexual behavior unless approved by the other person.
-  * *Hugs do not count.*
+  * *Digital/Virtual hugs do not count.*
 * Speaking English is a requirement so everyone understands each other.
 * No DOXing
 * No murderers and sexual predators that haven't done jail time yet are allowed here. Move on to another project.
