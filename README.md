@@ -5,6 +5,8 @@ Note: GEMS is in *really early development*, and will probably be that way for *
 
 Seriously... You can only boot to a small splash screen, you can't even type anything...
 
+but it has Colors, Sounds, A panic system so it is definitely improving.
+
 However, here are the dependencies (in ubuntu) in case you *want* to compile this
 
 ~~sudo apt install -y libc6-dev-i386 grub-common nasm gcc liblua5.1-0-dev liblua50:i386 liblua50-dev:i386 libc-dev:i386 linux-libc-dev:i386 libc6-dev:i386 qemu-system-i386 grub-pc-bin lua-socket xorriso gcc-9-multilib libc6-dev-i386 libc6-x32 gcc-multilib libc6-dev-x32 libc6-dev linux-libc-dev~~
