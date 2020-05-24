@@ -23,6 +23,7 @@ Oh and also: You really need an *i686 cross compiler,* I reccomend this one here
 Oh and a quick warning: *Test.sh / Qemu's PC SPEAKER is VERY LOUD. You will want to turn down your volume.*
 
 # Other files
+COC.md is the Code of Conduct. *Read before contributing.*
 
 BUGS.md is for listing all the different bugs and their origins/source and status.
 
