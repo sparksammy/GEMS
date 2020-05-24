@@ -12,5 +12,5 @@ We, overall, must follow one simple rule to each other: *Stay excellent to each 
   * This is just so that the owner (Samuel Lord) never gets kicked or banned from his own project[s].
 * "The only way to do great work is to love what you do." --Steve Jobs
 
-# About real names.
+## About real names.
 If you are comfortable going by your real name, that's great! If not, just go by your GitHub username. *If a user does not feel comfortable using their real name, don't use their real name.*
