@@ -35,3 +35,34 @@ void wait(int end) {
 	}
 	
 }
+
+bool countstate = false;
+int time2 = 0;
+
+// New count feature cuz why not?
+// They are all counted in seconds
+void Count() {
+	while (countstate == true) {
+		waitSecs(1);
+		time2++;
+	}
+}
+
+// get time from the new count feature
+int getTime() {
+	return time2;
+}
+
+// Sets time in seconds
+int setTime(int sec) {
+	time2 = sec;
+}
+
+
+void disableCount() {
+	countstate = false;
+}
+
+void enableCount() {
+	countstate = true;
+}
