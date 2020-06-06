@@ -113,7 +113,7 @@ void int2str(int num) {
 
 void printint(int num)
 {
-	char str = int2str(num); //Make number a string via int2str. 
+	char str = num; //Make number a string. 
 	print(str); //print it.
 }
 
