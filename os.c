@@ -58,8 +58,11 @@ void kern() {
 	print("Getting frequency of A2 \n");
 	print("(might be garbled until fixed) \n");
 	print(freqOfAsStr("a#2")); //wow.
+	print("\n Testing int2str functionality... \n");
+	printint(777);
+	print(" Winner!");
 	print("\n");
-	print("Everything seems fine. Starting OS...");
+	print("Everything seems fine to me. Starting OS...");
 	waitSecs(5);
 	clear(lastVGATextColor());
 	os();

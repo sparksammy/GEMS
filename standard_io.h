@@ -109,7 +109,7 @@ void print(const char* str)
 
 char int2str(int num) {
     int numHelper = num;
-    char str;
+    char str[100000000];
     int count = 0;
     int i;
     //This code counts from right to left
@@ -118,13 +118,16 @@ char int2str(int num) {
         numHelper /= 10;
     }
     int countB = 1; //count b will count how many digits from left to right.
+    int countC = 0; //count from 0
     while (count > 0) { //while our count is greater than 0
         int sn = num % countB;
-        char ss = sn + 0x30; //convert each digit to a string by adding 0x30, the ASCII hex code for 0... :)
-        str = str + ss; //concat ss to str
+        char ss = sn + 48; //convert each digit to a string by adding 48, the ASCII decimal code for 0... :)
+        str[countC] = ss; //concat ss to str
         countB++; //add to count B
+        countC++;
         count -= 1; //subtract 1 from count
     }
+    str[countC + 1] = "\0"; //terminate string
 	return str; //return it
 }
 
