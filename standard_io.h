@@ -106,6 +106,7 @@ void print(const char* str)
 		printc(str[i]);
 }
 
+
 int int2str(int num) {
 	char str = num; //Make number a string. 
 	return str; //return it
