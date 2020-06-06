@@ -107,14 +107,30 @@ void print(const char* str)
 }
 
 
-int int2str(int num) {
-	char str = num; //Make number a string. 
+char int2str(int num) {
+    int numHelper = num;
+    char str;
+    int count = 0;
+    int i;
+    //This code counts from right to left
+    while (numHelper > 0) {
+        count++;
+        numHelper /= 10;
+    }
+    int countB = 1; //count b will count how many digits from left to right.
+    while (count > 0) { //while our count is greater than 0
+        int sn = num % countB;
+        char ss = sn + 0x30; //convert each digit to a string by adding 0x30, the ASCII hex code for 0... :)
+        str = str + ss; //concat ss to str
+        countB++; //add to count B
+        count -= 1; //subtract 1 from count
+    }
 	return str; //return it
 }
 
 void printint(int num)
 {
-	char str = num; //Make number a string. 
+	char str = int2str(num); //Make number a string. 
 	print(str); //print it.
 }
 
