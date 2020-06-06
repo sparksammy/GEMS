@@ -106,6 +106,17 @@ void print(const char* str)
 		printc(str[i]);
 }
 
+void int2str(int num) {
+	char str = num; //Make number a string. 
+	return str; //return it
+}
+
+void printint(int num)
+{
+	char str = int2str(num); //Make number a string via int2str. 
+	print(str); //print it.
+}
+
 //DO NOT USE
 void vgaprint(char *text, int color) {
 	lc = color;
