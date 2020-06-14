@@ -1,4 +1,6 @@
-# TODO - FROM GREATEST TO LEAST PRIORITY
-* PS/2 KEYBOARD SUPPORT (ME AND MY FRIENDS WHO KNOW ELFi686 C AND ASM (also: oklomsy), FAILED. WILL WORK ON IT LATER.)
-* WORK ON NEW RUSHELL IMPLEMENTATION (ok i made part of it, oklomsy will have to do this after he finishes panics and keyboard support.)
-* *MAKE BUILDING WORK IN WSL (ASSIGNED TO NO ONE, NOT IMPORTANT ENOUGH FOR NOW.)*
+# TODO
+## FROM GREATEST TO LEAST PRIORITY
+* Fix int2str
+* Get PS/2 keyboard support working
+* Convert keycodes to english characters according to standard en-US layout
+* Finish up RuShell
