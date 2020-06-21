@@ -38,10 +38,11 @@ typedef mboot_memmap_t mmap_entry_t;
 typedef multiboot_info mmap_addr_length;
 
 void os() {
-	rloadstring("welcomescreen");
-	rloadstring("helpscreen");
+	//rloadstring("welcomescreen");
+	//rloadstring("helpscreen");
 	//panic("TEST"); //uncomment to test panicing
-	rloadstring("debugRainbow");
+	//rloadstring("debugRainbow");
+	rloadstring("yespapa");
 	while ( 1 == 1 ) {
 		rloadstring("basickeys");
 	}

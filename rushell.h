@@ -23,7 +23,19 @@ void rloadstring(cmd, var1, var2) {
 		setTermColor(0x4F);
 		print("More? Less? Who knows?");
 		print(" It just depends on how we feel...\n");
-		print("--The GEMS Team");
+		print("--The GEMS Team\n");
+		setTermColor(0x0F);
+     } else if (cmd == "yespapa") {
+		setTermColor(0x2A);
+		print("**Happy Father's Day**\n");
+		setTermColor(0x4F);
+		print("From: ~~The GEMS Team~~\n");
+		setTermColor(0x0F);
+	} else if (cmd == "xmas") {
+		setTermColor(0x2A);
+		print("**Happy Christmas's Day\n");
+		setTermColor(0x2A);
+		print("--The GEMS Team\n");
 		setTermColor(0x0F);
 	} else if (cmd == "debugRainbow") {
 		setTermColor(0x2F);
