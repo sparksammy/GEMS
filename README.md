@@ -28,3 +28,5 @@ COC.md is the Code of Conduct. *Read before contributing.*
 BUGS.md is for listing all the different bugs and their origins/source and status.
 
 NOTES.md is for listing everything we have learned so far.
+
+WSLHOWTO.MD is a tutorial on how to build and run GEMS in Windows.
