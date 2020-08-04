@@ -21,3 +21,7 @@ Then run "./qemu-system-x86_64.exe -soundhw pcspk -cdrom builds/gems.iso -m 1000
 There are probably other, better ways of running GEMS in windows.
 
 Try VirtualBox but give it a lot of Memory.
+
+Maybe change the PATH variable to the QEMU Folder.
+
+and then just run the command in Powershell (Without ./ at the beginning)
