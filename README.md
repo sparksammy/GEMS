@@ -1,7 +1,7 @@
 # <img src="gems.png" alt="Logo" width="5%"/> GEMS
 ## DEPRECATION NOTICE!!!
 THIS PROJECT IS OUT OF DATE, AND EVERYTHING THAT'S ON TODO.MD  (AND MORE) HAS BEEN DONE [HERE](https://github.com/sparksammy/gems-nt)
-
+<hr>
 
 GEMS - GEMS is ESSENTIALLY MAYBE SPINEL
 *Note: This is not Spinel, we are just trying to be better. ;)*
