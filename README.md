@@ -1,4 +1,8 @@
 # <img src="gems.png" alt="Logo" width="5%"/> GEMS
+## DEPRECATION NOTICE!!!
+THIS PROJECT IS OUT OF DATE, AND EVERYTHING THAT'S ON TODO.MD  (AND MORE) HAS BEEN DONE (HERE)[https://github.com/sparksammy/gems-nt]
+
+
 GEMS - GEMS is ESSENTIALLY MAYBE SPINEL
 *Note: This is not Spinel, we are just trying to be better. ;)*
 Note: GEMS is in *really early development*, and will probably be that way for ***quite a while.*** Note: This is highly based off of https://wiki.osdev.org/ and user Zesterer's Bare_Bones, however it is modified quite a bit to work for us.
